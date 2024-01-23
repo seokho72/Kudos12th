@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="kubot23w_world">
+		<physics name="default_physics" default="0" type="ode">
+		 <max_step_size>0.001</max_step_size> //최대 1ms로 계산 가능
+		 <real_time_factor>1</real_time_factor> //실시간과 비슷 ex)0.5>0.5배속
+		 <real_time_update_rate>1000</real_time_update_rate> //1초안에 1000번 계산, 1000hz
+		 <ode> //open dynamic engine을 사용하는 물리환경
+
+ 		 <friction>
+   		 <mu>0.5</mu>       <!-- 기본 마찰 계수 -->
+    		 <mu2>0.1</mu2>     <!-- 추가 마찰 계수 -->
+   		 <fdir1>1 0 0</fdir1> <!-- 마찰 방향 (선택 사항) -->
+  		 </friction>
+
+			<solver>
+			 <type>quick</type>
+			 <iters>100</iters>
+			 <sor>1.0</sor>
+			 <use_dynamic_moi_rescaling>false</use_dynamic_moi_rescaling>
+			</solver>
+		 </ode>
+	</physics>
+
+	<include>
+	 <uri>model://ground_plane</uri>
+	</include>
+
+	<include>
+	 <uri>model://sun</uri>
+	</include>
+
+	<include>
+	 <uri>model://kubot23W</uri>
+	 <pose frame=''>0 -0 0.465 0 0 0</pose> //x,y,z,roll,pitch,yaw
+	       <plugin name="kubot23_plugin.cc" filename="libkubot23w_pkgs.so"/>
+	</include>
+ </world>
+</sdf>

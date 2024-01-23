@@ -1,0 +1,1323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="kubot23W">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.00019555 -5.8876E-06 -0.0016409"
+        rpy="0 0 0" />
+      <mass
+        value="1.5013" />
+      <inertia
+        ixx="0.002447"
+        ixy="0"
+        ixz="0"
+        iyy="0.0016369"
+        iyz="0"
+        izz="0.0026461" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="L_Hip_yaw">
+    <inertial>
+      <origin
+        xyz="0.0079905 7.3552E-16 0.037856"
+        rpy="0 0 0" />
+      <mass
+        value="0.042373" />
+      <inertia
+        ixx="2.0934E-05"
+        ixy="0"
+        ixz="0"
+        iyy="2.3301E-05"
+        iyz="0"
+        izz="8.0568E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Hip_yaw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Hip_yaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_Hip_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0.036475 0.052758 -0.13016"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_Hip_yaw" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="L_Hip_roll">
+    <inertial>
+      <origin
+        xyz="-0.026534 3.8609E-05 -0.015186"
+        rpy="0 0 0" />
+      <mass
+        value="0.16184" />
+      <inertia
+        ixx="5.7094E-05"
+        ixy="0"
+        ixz="0"
+        iyy="5.6447E-05"
+        iyz="0"
+        izz="3.5594E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Hip_roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Hip_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_Hip_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="L_Hip_yaw" />
+    <child
+      link="L_Hip_roll" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="L_Hip_pitch">
+    <inertial>
+      <origin
+        xyz="-0.00049308 0.00014975 -0.10339"
+        rpy="0 0 0" />
+      <mass
+        value="0.13309" />
+      <inertia
+        ixx="0.00010704"
+        ixy="0"
+        ixz="0"
+        iyy="7.9626E-05"
+        iyz="0"
+        izz="5.4203E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Hip_pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Hip_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_Hip_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="L_Hip_roll" />
+    <child
+      link="L_Hip_pitch" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="L_Knee">
+    <inertial>
+      <origin
+        xyz="-0.0008 0.0002 -0.071592"
+        rpy="0 0 0" />
+      <mass
+        value="0.064192" />
+      <inertia
+        ixx="0.00017283"
+        ixy="0"
+        ixz="0"
+        iyy="0.00013756"
+        iyz="0"
+        izz="5.3025E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Knee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Knee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_Knee_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.142"
+      rpy="0 0 0" />
+    <parent
+      link="L_Hip_pitch" />
+    <child
+      link="L_Knee" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="L_Ankle_pitch">
+    <inertial>
+      <origin
+        xyz="-0.023428 0.00014947 0.013986"
+        rpy="0 0 0" />
+      <mass
+        value="0.202" />
+      <inertia
+        ixx="8.0067E-05"
+        ixy="0"
+        ixz="0"
+        iyy="7.8271E-05"
+        iyz="0"
+        izz="4.9146E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Ankle_pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Ankle_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_Ankle_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.15"
+      rpy="0 0 0" />
+    <parent
+      link="L_Knee" />
+    <child
+      link="L_Ankle_pitch" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="L_Ankle_roll">
+    <inertial>
+      <origin
+        xyz="-0.028824 0.0001 -0.014117"
+        rpy="0 0 0" />
+      <mass
+        value="0.010759" />
+      <inertia
+        ixx="3.5206E-06"
+        ixy="0"
+        ixz="0"
+        iyy="2.4389E-06"
+        iyz="0"
+        izz="1.2851E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Ankle_roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Ankle_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_Ankle_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="L_Ankle_pitch" />
+    <child
+      link="L_Ankle_roll" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="L_Foot">
+    <inertial>
+      <origin
+        xyz="0.0059202 0.012819 0.0039506"
+        rpy="0 0 0" />
+      <mass
+        value="0.12872" />
+      <inertia
+        ixx="0.00013117"
+        ixy="0"
+        ixz="0"
+        iyy="0.00029696"
+        iyz="0"
+        izz="0.00042612" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_Foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_Foot_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.042"
+      rpy="0 0 0" />
+    <parent
+      link="L_Ankle_roll" />
+    <child
+      link="L_Foot" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_Hip_yaw">
+    <inertial>
+      <origin
+        xyz="0.0079905 -7.6661E-09 0.037856"
+        rpy="0 0 0" />
+      <mass
+        value="0.042373" />
+      <inertia
+        ixx="2.0934E-05"
+        ixy="0"
+        ixz="0"
+        iyy="2.3301E-05"
+        iyz="0"
+        izz="8.0568E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Hip_yaw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Hip_yaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_Hip_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0.036475 -0.051842 -0.13016"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_Hip_yaw" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_Hip_roll">
+    <inertial>
+      <origin
+        xyz="-0.026534 -3.8626E-05 -0.015186"
+        rpy="0 0 0" />
+      <mass
+        value="0.16184" />
+      <inertia
+        ixx="5.7094E-05"
+        ixy="0"
+        ixz="0"
+        iyy="5.6447E-05"
+        iyz="0"
+        izz="3.5594E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Hip_roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Hip_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_Hip_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="R_Hip_yaw" />
+    <child
+      link="R_Hip_roll" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_Hip_pitch">
+    <inertial>
+      <origin
+        xyz="-0.0004978 -0.00014978 -0.10339"
+        rpy="0 0 0" />
+      <mass
+        value="0.13309" />
+      <inertia
+        ixx="0.00010704"
+        ixy="0"
+        ixz="0"
+        iyy="7.9626E-05"
+        iyz="0"
+        izz="5.4203E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Hip_pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Hip_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_Hip_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="R_Hip_roll" />
+    <child
+      link="R_Hip_pitch" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_Knee">
+    <inertial>
+      <origin
+        xyz="-0.0008 -0.00020005 -0.071592"
+        rpy="0 0 0" />
+      <mass
+        value="0.064192" />
+      <inertia
+        ixx="0.00017283"
+        ixy="0"
+        ixz="0"
+        iyy="0.00013756"
+        iyz="0"
+        izz="5.3025E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Knee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Knee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_Knee_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.142"
+      rpy="0 0 0" />
+    <parent
+      link="R_Hip_pitch" />
+    <child
+      link="R_Knee" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_Ankle_pitch">
+    <inertial>
+      <origin
+        xyz="-0.023731 -0.00015295 0.01407"
+        rpy="0 0 0" />
+      <mass
+        value="0.20079" />
+      <inertia
+        ixx="7.9929E-05"
+        ixy="0"
+        ixz="0"
+        iyy="7.8201E-05"
+        iyz="0"
+        izz="4.9077E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Ankle_pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Ankle_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_Ankle_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.15"
+      rpy="0 0 0" />
+    <parent
+      link="R_Knee" />
+    <child
+      link="R_Ankle_pitch" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_Ankle_roll">
+    <inertial>
+      <origin
+        xyz="-0.028824 -0.00010006 -0.014117"
+        rpy="0 0 0" />
+      <mass
+        value="0.010759" />
+      <inertia
+        ixx="3.5206E-06"
+        ixy="0"
+        ixz="0"
+        iyy="2.4389E-06"
+        iyz="0"
+        izz="1.2851E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Ankle_roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Ankle_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_Ankle_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="R_Ankle_pitch" />
+    <child
+      link="R_Ankle_roll" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_Foot">
+    <inertial>
+      <origin
+        xyz="0.0059202 -0.012819 0.0039506"
+        rpy="0 0 0" />
+      <mass
+        value="0.12872" />
+      <inertia
+        ixx="0.00013117"
+        ixy="0"
+        ixz="0"
+        iyy="0.00029696"
+        iyz="0"
+        izz="0.00042612" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Foot.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_Foot.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_Foot_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.042"
+      rpy="0 0 0" />
+    <parent
+      link="R_Ankle_roll" />
+    <child
+      link="R_Foot" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="L_shoulder_pitch">
+    <inertial>
+      <origin
+        xyz="9.7314E-10 0.010248 -0.0016377"
+        rpy="0 0 0" />
+      <mass
+        value="0.014469" />
+      <inertia
+        ixx="2.0393E-06"
+        ixy="0"
+        ixz="0"
+        iyy="6.5772E-06"
+        iyz="0"
+        izz="6.757E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_shoulder_pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_shoulder_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.027975 0.082208 0.091918"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="L_shoulder_pitch" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="L_elbow_roll">
+    <inertial>
+      <origin
+        xyz="-0.02074 1.0217E-05 -0.061881"
+        rpy="0 0 0" />
+      <mass
+        value="0.12312" />
+      <inertia
+        ixx="4.1405E-05"
+        ixy="0"
+        ixz="0"
+        iyy="4.4134E-05"
+        iyz="0"
+        izz="2.9326E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_elbow_roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_elbow_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_elbow_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.020275 0.025656 -0.01045"
+      rpy="0 0 0" />
+    <parent
+      link="L_shoulder_pitch" />
+    <child
+      link="L_elbow_roll" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="L_hand_pitch">
+    <inertial>
+      <origin
+        xyz="1.6376E-15 -0.020275 -0.13605"
+        rpy="0 0 0" />
+      <mass
+        value="0.085842" />
+      <inertia
+        ixx="0.00035605"
+        ixy="0"
+        ixz="0"
+        iyy="0.00035569"
+        iyz="0"
+        izz="4.765E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_hand_pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/L_hand_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="L_hand_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.02075 0.02075 -0.1231"
+      rpy="0 0 0" />
+    <parent
+      link="L_elbow_roll" />
+    <child
+      link="L_hand_pitch" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_shoulder_pitch">
+    <inertial>
+      <origin
+        xyz="-9.7314E-10 -0.010248 -0.0016377"
+        rpy="0 0 0" />
+      <mass
+        value="0.014469" />
+      <inertia
+        ixx="2.0393E-06"
+        ixy="0"
+        ixz="0"
+        iyy="6.5772E-06"
+        iyz="0"
+        izz="6.757E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_shoulder_pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_shoulder_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_shoulder_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0.027975 -0.081292 0.091918"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="R_shoulder_pitch" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_elbow_roll">
+    <inertial>
+      <origin
+        xyz="-0.020741 -8.7962E-06 -0.061881"
+        rpy="0 0 0" />
+      <mass
+        value="0.12312" />
+      <inertia
+        ixx="4.1405E-05"
+        ixy="0"
+        ixz="0"
+        iyy="4.4134E-05"
+        iyz="0"
+        izz="2.9326E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_elbow_roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_elbow_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_elbow_roll_joint"
+    type="revolute">
+    <origin
+      xyz="0.020275 -0.025656 -0.01045"
+      rpy="0 0 0" />
+    <parent
+      link="R_shoulder_pitch" />
+    <child
+      link="R_elbow_roll" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="R_hand_pitch">
+    <inertial>
+      <origin
+        xyz="-6.9389E-16 0.020275 -0.13605"
+        rpy="0 0 0" />
+      <mass
+        value="0.085842" />
+      <inertia
+        ixx="0.00035605"
+        ixy="0"
+        ixz="0"
+        iyy="0.00035569"
+        iyz="0"
+        izz="4.765E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_hand_pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/R_hand_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="R_hand_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="-0.02075 -0.02075 -0.1231"
+      rpy="0 0 0" />
+    <parent
+      link="R_elbow_roll" />
+    <child
+      link="R_hand_pitch" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="Neck_yaw">
+    <inertial>
+      <origin
+        xyz="1.0547E-15 1.4294E-15 0.010333"
+        rpy="0 0 0" />
+      <mass
+        value="0.014237" />
+      <inertia
+        ixx="6.6446E-06"
+        ixy="0"
+        ixz="0"
+        iyy="1.9564E-06"
+        iyz="0"
+        izz="6.2867E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/Neck_yaw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/Neck_yaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Neck_yaw_joint"
+    type="revolute">
+    <origin
+      xyz="0.026225 0.00045775 0.11187"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Neck_yaw" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="head_pitch">
+    <inertial>
+      <origin
+        xyz="-0.00087615 -0.0004928 0.038502"
+        rpy="0 0 0" />
+      <mass
+        value="0.14082" />
+      <inertia
+        ixx="0.0001309"
+        ixy="0"
+        ixz="0"
+        iyy="2.5779E-05"
+        iyz="0"
+        izz="0.00012811" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/head_pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://kubot23W/meshes/head_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="head_pitch_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.0275"
+      rpy="0 0 0" />
+    <parent
+      link="Neck_yaw" />
+    <child
+      link="head_pitch" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

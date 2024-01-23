@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="src_map">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.02622 -0.00072845 0.059316"
+        rpy="0 0 0" />
+      <mass
+        value="959.74" />
+      <inertia
+        ixx="697.32"
+        ixy="1.0435"
+        ixz="-1.4803"
+        iyy="2669.6"
+        iyz="0.44075"
+        izz="3334.9" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://src_map/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://src_map/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="hurdle1_Link">
+    <inertial>
+      <origin
+        xyz="-0.00817325540481217 0.00576176154380825 -1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1.85599999999997" />
+      <inertia
+        ixx="0.131230878023903"
+        ixy="-0.0915897205767325"
+        ixz="2.71700290636178E-17"
+        iyy="0.0658741886427607"
+        iyz="3.96064439150578E-17"
+        izz="0.195125333333331" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://src_map/meshes/hurdle1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://src_map/meshes/hurdle1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hurdle1"
+    type="revolute">
+    <origin
+      xyz="2.0176 0.84026 0.09"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="hurdle1_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="hurdle2_Link">
+    <inertial>
+      <origin
+        xyz="-0.0033148 0.0094346 1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1.856" />
+      <inertia
+        ixx="0.022678"
+        ixy="-0.060824"
+        ixz="3.0419E-18"
+        iyy="0.17443"
+        iyz="3.0406E-18"
+        izz="0.19513" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://src_map/meshes/hurdle2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://src_map/meshes/hurdle2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hurdle2"
+    type="revolute">
+    <origin
+      xyz="2.3961 0.37985 0.09"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="hurdle2_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="hurdle3_Link">
+    <inertial>
+      <origin
+        xyz="0.0043927 0.0089836 -1.3878E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1.856" />
+      <inertia
+        ixx="0.038836"
+        ixy="0.07675"
+        ixz="-4.7401E-17"
+        iyy="0.15827"
+        iyz="2.0623E-17"
+        izz="0.19513" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://src_map/meshes/hurdle3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://src_map/meshes/hurdle3_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hurdle3"
+    type="revolute">
+    <origin
+      xyz="2.3776 -0.39466 0.09"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="hurdle3_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="hurdle4_Link">
+    <inertial>
+      <origin
+        xyz="0.00869551161437454 0.00493842867360439 1.38777878078145E-17"
+        rpy="0 0 0" />
+      <mass
+        value="1.856" />
+      <inertia
+        ixx="0.148365058441908"
+        ixy="0.0835180427772801"
+        ixz="-1.38831543059441E-17"
+        iyy="0.0487400082247583"
+        iyz="2.57793435805857E-17"
+        izz="0.195125333333333" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://src_map/meshes/hurdle4_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://src_map/meshes/hurdle4_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hurdle4"
+    type="revolute">
+    <origin
+      xyz="1.9201 -0.85934 0.09"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="hurdle4_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="line_Link">
+    <inertial>
+      <origin
+        xyz="-6.66133814775094E-15 5.26662047306559E-15 -0.025"
+        rpy="0 0 0" />
+      <mass
+        value="17.7562247326248" />
+      <inertia
+        ixx="10.3551811753411"
+        ixy="0.247520960774705"
+        ixz="4.44433578259115E-16"
+        iyy="40.9733025741136"
+        iyz="1.01306879490953E-17"
+        izz="51.3210853224827" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://src_map/meshes/line_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://src_map/meshes/line_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="line"
+    type="revolute">
+    <origin
+      xyz="-0.53783 0.039373 0.05"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="line_Link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

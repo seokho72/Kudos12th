@@ -1,0 +1,1158 @@
+<sdf version='1.7'>
+  <model name='kubot23W'>
+    <link name='base_link'>
+      <inertial>
+        <pose>-0.000196 -6e-06 -0.001641 0 -0 0</pose>
+        <mass>1.5013</mass>
+        <inertia>
+          <ixx>0.002447</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0016369</iyy>
+          <iyz>0</iyz>
+          <izz>0.0026461</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='L_Hip_yaw_joint' type='revolute'>
+      <pose relative_to='base_link'>0.036475 0.052758 -0.13016 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>L_Hip_yaw</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='L_Hip_yaw'>
+      <pose relative_to='L_Hip_yaw_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.00799 0 0.037856 0 -0 0</pose>
+        <mass>0.042373</mass>
+        <inertia>
+          <ixx>2.0934e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.3301e-05</iyy>
+          <iyz>0</iyz>
+          <izz>8.0568e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_Hip_yaw_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Hip_yaw.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_Hip_yaw_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Hip_yaw.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='L_Hip_roll_joint' type='revolute'>
+      <pose relative_to='L_Hip_yaw'>0 0 0 0 -0 0</pose>
+      <parent>L_Hip_yaw</parent>
+      <child>L_Hip_roll</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='L_Hip_roll'>
+      <pose relative_to='L_Hip_roll_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.026534 3.9e-05 -0.015186 0 -0 0</pose>
+        <mass>0.16184</mass>
+        <inertia>
+          <ixx>5.7094e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.6447e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.5594e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_Hip_roll_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Hip_roll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_Hip_roll_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Hip_roll.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='L_Hip_pitch_joint' type='revolute'>
+      <pose relative_to='L_Hip_roll'>0 0 0 0 -0 0</pose>
+      <parent>L_Hip_roll</parent>
+      <child>L_Hip_pitch</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='L_Hip_pitch'>
+      <pose relative_to='L_Hip_pitch_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000493 0.00015 -0.10339 0 -0 0</pose>
+        <mass>0.13309</mass>
+        <inertia>
+          <ixx>0.00010704</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.9626e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5.4203e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_Hip_pitch_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Hip_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_Hip_pitch_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Hip_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='L_Knee_joint' type='revolute'>
+      <pose relative_to='L_Hip_pitch'>0 0 -0.142 0 -0 0</pose>
+      <parent>L_Hip_pitch</parent>
+      <child>L_Knee</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='L_Knee'>
+      <pose relative_to='L_Knee_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.0008 0.0002 -0.071592 0 -0 0</pose>
+        <mass>0.064192</mass>
+        <inertia>
+          <ixx>0.00017283</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00013756</iyy>
+          <iyz>0</iyz>
+          <izz>5.3025e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_Knee_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Knee.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_Knee_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Knee.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='L_Ankle_pitch_joint' type='revolute'>
+      <pose relative_to='L_Knee'>0 0 -0.15 0 -0 0</pose>
+      <parent>L_Knee</parent>
+      <child>L_Ankle_pitch</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='L_Ankle_pitch'>
+      <pose relative_to='L_Ankle_pitch_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.023428 0.000149 0.013986 0 -0 0</pose>
+        <mass>0.202</mass>
+        <inertia>
+          <ixx>8.0067e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.8271e-05</iyy>
+          <iyz>0</iyz>
+          <izz>4.9146e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_Ankle_pitch_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Ankle_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_Ankle_pitch_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Ankle_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='L_Ankle_roll_joint' type='revolute'>
+      <pose relative_to='L_Ankle_pitch'>0 0 0 0 -0 0</pose>
+      <parent>L_Ankle_pitch</parent>
+      <child>L_Ankle_roll</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='L_Ankle_roll'>
+      <pose relative_to='L_Ankle_roll_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.028824 0.0001 -0.014117 0 -0 0</pose>
+        <mass>0.010759</mass>
+        <inertia>
+          <ixx>3.5206e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.4389e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.2851e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_Ankle_roll_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Ankle_roll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_Ankle_roll_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Ankle_roll.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='L_Foot_joint' type='revolute'>
+      <pose relative_to='L_Ankle_roll'>0 0 -0.042 0 -0 0</pose>
+      <parent>L_Ankle_roll</parent>
+      <child>L_Foot</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='L_Foot'>
+      <pose relative_to='L_Foot_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.00592 0.012819 0.003951 0 -0 0</pose>
+        <mass>0.12872</mass>
+        <inertia>
+          <ixx>0.00013117</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00029696</iyy>
+          <iyz>0</iyz>
+          <izz>0.00042612</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_Foot_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Foot.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_Foot_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_Foot.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='L_shoulder_pitch_joint' type='revolute'>
+      <pose relative_to='base_link'>0.027975 0.082208 0.091918 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>L_shoulder_pitch</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='L_shoulder_pitch'>
+      <pose relative_to='L_shoulder_pitch_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0.010248 -0.001638 0 -0 0</pose>
+        <mass>0.014469</mass>
+        <inertia>
+          <ixx>2.0393e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.5772e-06</iyy>
+          <iyz>0</iyz>
+          <izz>6.757e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_shoulder_pitch_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_shoulder_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_shoulder_pitch_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_shoulder_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='L_elbow_roll_joint' type='revolute'>
+      <pose relative_to='L_shoulder_pitch'>0.020275 0.025656 -0.01045 0 -0 0</pose>
+      <parent>L_shoulder_pitch</parent>
+      <child>L_elbow_roll</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='L_elbow_roll'>
+      <pose relative_to='L_elbow_roll_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.02074 1e-05 -0.061881 0 -0 0</pose>
+        <mass>0.12312</mass>
+        <inertia>
+          <ixx>4.1405e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.4134e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.9326e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_elbow_roll_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_elbow_roll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_elbow_roll_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_elbow_roll.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='L_hand_pitch_joint' type='revolute'>
+      <pose relative_to='L_elbow_roll'>-0.02075 0.02075 -0.1231 0 -0 0</pose>
+      <parent>L_elbow_roll</parent>
+      <child>L_hand_pitch</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='L_hand_pitch'>
+      <pose relative_to='L_hand_pitch_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 -0.020275 -0.13605 0 -0 0</pose>
+        <mass>0.085842</mass>
+        <inertia>
+          <ixx>0.00035605</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00035569</iyy>
+          <iyz>0</iyz>
+          <izz>4.765e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='L_hand_pitch_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_hand_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='L_hand_pitch_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/L_hand_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='Neck_yaw_joint' type='revolute'>
+      <pose relative_to='base_link'>0.026225 0.000458 0.11187 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>Neck_yaw</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='Neck_yaw'>
+      <pose relative_to='Neck_yaw_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0.010333 0 -0 0</pose>
+        <mass>0.014237</mass>
+        <inertia>
+          <ixx>6.6446e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.9564e-06</iyy>
+          <iyz>0</iyz>
+          <izz>6.2867e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='Neck_yaw_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/Neck_yaw.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='Neck_yaw_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/Neck_yaw.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='head_pitch_joint' type='revolute'>
+      <pose relative_to='Neck_yaw'>0 0 0.0275 0 -0 0</pose>
+      <parent>Neck_yaw</parent>
+      <child>head_pitch</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='head_pitch'>
+      <pose relative_to='head_pitch_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000876 -0.000493 0.038502 0 -0 0</pose>
+        <mass>0.14082</mass>
+        <inertia>
+          <ixx>0.0001309</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.5779e-05</iyy>
+          <iyz>0</iyz>
+          <izz>0.00012811</izz>
+        </inertia>
+      </inertial>
+      <collision name='head_pitch_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/head_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='head_pitch_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/head_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='R_Hip_yaw_joint' type='revolute'>
+      <pose relative_to='base_link'>0.036475 -0.051842 -0.13016 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>R_Hip_yaw</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='R_Hip_yaw'>
+      <pose relative_to='R_Hip_yaw_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.00799 -0 0.037856 0 -0 0</pose>
+        <mass>0.042373</mass>
+        <inertia>
+          <ixx>2.0934e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.3301e-05</iyy>
+          <iyz>0</iyz>
+          <izz>8.0568e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_Hip_yaw_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Hip_yaw.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_Hip_yaw_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Hip_yaw.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='R_Hip_roll_joint' type='revolute'>
+      <pose relative_to='R_Hip_yaw'>0 0 0 0 -0 0</pose>
+      <parent>R_Hip_yaw</parent>
+      <child>R_Hip_roll</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='R_Hip_roll'>
+      <pose relative_to='R_Hip_roll_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.026534 -3.9e-05 -0.015186 0 -0 0</pose>
+        <mass>0.16184</mass>
+        <inertia>
+          <ixx>5.7094e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.6447e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.5594e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_Hip_roll_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Hip_roll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_Hip_roll_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Hip_roll.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='R_Hip_pitch_joint' type='revolute'>
+      <pose relative_to='R_Hip_roll'>0 0 0 0 -0 0</pose>
+      <parent>R_Hip_roll</parent>
+      <child>R_Hip_pitch</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='R_Hip_pitch'>
+      <pose relative_to='R_Hip_pitch_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.000498 -0.00015 -0.10339 0 -0 0</pose>
+        <mass>0.13309</mass>
+        <inertia>
+          <ixx>0.00010704</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.9626e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5.4203e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_Hip_pitch_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Hip_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_Hip_pitch_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Hip_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='R_Knee_joint' type='revolute'>
+      <pose relative_to='R_Hip_pitch'>0 0 -0.142 0 -0 0</pose>
+      <parent>R_Hip_pitch</parent>
+      <child>R_Knee</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='R_Knee'>
+      <pose relative_to='R_Knee_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.0008 -0.0002 -0.071592 0 -0 0</pose>
+        <mass>0.064192</mass>
+        <inertia>
+          <ixx>0.00017283</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00013756</iyy>
+          <iyz>0</iyz>
+          <izz>5.3025e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_Knee_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Knee.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_Knee_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Knee.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='R_Ankle_pitch_joint' type='revolute'>
+      <pose relative_to='R_Knee'>0 0 -0.15 0 -0 0</pose>
+      <parent>R_Knee</parent>
+      <child>R_Ankle_pitch</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='R_Ankle_pitch'>
+      <pose relative_to='R_Ankle_pitch_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.023731 -0.000153 0.01407 0 -0 0</pose>
+        <mass>0.20079</mass>
+        <inertia>
+          <ixx>7.9929e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.8201e-05</iyy>
+          <iyz>0</iyz>
+          <izz>4.9077e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_Ankle_pitch_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Ankle_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_Ankle_pitch_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Ankle_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='R_Ankle_roll_joint' type='revolute'>
+      <pose relative_to='R_Ankle_pitch'>0 0 0 0 -0 0</pose>
+      <parent>R_Ankle_pitch</parent>
+      <child>R_Ankle_roll</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='R_Ankle_roll'>
+      <pose relative_to='R_Ankle_roll_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.028824 -0.0001 -0.014117 0 -0 0</pose>
+        <mass>0.010759</mass>
+        <inertia>
+          <ixx>3.5206e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.4389e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.2851e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_Ankle_roll_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Ankle_roll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_Ankle_roll_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Ankle_roll.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='R_Foot_joint' type='revolute'>
+      <pose relative_to='R_Ankle_roll'>0 0 -0.042 0 -0 0</pose>
+      <parent>R_Ankle_roll</parent>
+      <child>R_Foot</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='R_Foot'>
+      <pose relative_to='R_Foot_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.00592 -0.012819 0.003951 0 -0 0</pose>
+        <mass>0.12872</mass>
+        <inertia>
+          <ixx>0.00013117</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00029696</iyy>
+          <iyz>0</iyz>
+          <izz>0.00042612</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_Foot_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Foot.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_Foot_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_Foot.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='R_shoulder_pitch_joint' type='revolute'>
+      <pose relative_to='base_link'>0.027975 -0.081292 0.091918 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>R_shoulder_pitch</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='R_shoulder_pitch'>
+      <pose relative_to='R_shoulder_pitch_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 -0.010248 -0.001638 0 -0 0</pose>
+        <mass>0.014469</mass>
+        <inertia>
+          <ixx>2.0393e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.5772e-06</iyy>
+          <iyz>0</iyz>
+          <izz>6.757e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_shoulder_pitch_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_shoulder_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_shoulder_pitch_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_shoulder_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='R_elbow_roll_joint' type='revolute'>
+      <pose relative_to='R_shoulder_pitch'>0.020275 -0.025656 -0.01045 0 -0 0</pose>
+      <parent>R_shoulder_pitch</parent>
+      <child>R_elbow_roll</child>
+      <axis>
+        <xyz>-1 0 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='R_elbow_roll'>
+      <pose relative_to='R_elbow_roll_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.020741 -9e-06 -0.061881 0 -0 0</pose>
+        <mass>0.12312</mass>
+        <inertia>
+          <ixx>4.1405e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4.4134e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.9326e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_elbow_roll_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_elbow_roll.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_elbow_roll_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_elbow_roll.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='R_hand_pitch_joint' type='revolute'>
+      <pose relative_to='R_elbow_roll'>-0.02075 -0.02075 -0.1231 0 -0 0</pose>
+      <parent>R_elbow_roll</parent>
+      <child>R_hand_pitch</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='R_hand_pitch'>
+      <pose relative_to='R_hand_pitch_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0.020275 -0.13605 0 -0 0</pose>
+        <mass>0.085842</mass>
+        <inertia>
+          <ixx>0.00035605</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.00035569</iyy>
+          <iyz>0</iyz>
+          <izz>4.765e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='R_hand_pitch_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_hand_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='R_hand_pitch_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://kubot23W/meshes/R_hand_pitch.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

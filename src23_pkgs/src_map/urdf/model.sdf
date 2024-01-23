@@ -1,0 +1,291 @@
+<sdf version='1.7'>
+  <model name='src_map'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0.02622 -0.000728 0.059316 0 -0 0</pose>
+        <mass>959.74</mass>
+        <inertia>
+          <ixx>697.32</ixx>
+          <ixy>1.0435</ixy>
+          <ixz>-1.4803</ixz>
+          <iyy>2669.6</iyy>
+          <iyz>0.44075</iyz>
+          <izz>3334.9</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src_map/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src_map/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hurdle1' type='revolute'>
+      <pose relative_to='base_link'>2.0176 0.84026 0.09 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>hurdle1_Link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hurdle1_Link'>
+      <pose relative_to='hurdle1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.008173 0.005762 -0 0 -0 0</pose>
+        <mass>1.856</mass>
+        <inertia>
+          <ixx>0.131231</ixx>
+          <ixy>-0.0915897</ixy>
+          <ixz>2.717e-17</ixz>
+          <iyy>0.0658742</iyy>
+          <iyz>3.96064e-17</iyz>
+          <izz>0.195125</izz>
+        </inertia>
+      </inertial>
+      <collision name='hurdle1_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src_map/meshes/hurdle1_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hurdle1_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src_map/meshes/hurdle1_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hurdle2' type='revolute'>
+      <pose relative_to='base_link'>2.3961 0.37985 0.09 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>hurdle2_Link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hurdle2_Link'>
+      <pose relative_to='hurdle2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.003315 0.009435 0 0 -0 0</pose>
+        <mass>1.856</mass>
+        <inertia>
+          <ixx>0.022678</ixx>
+          <ixy>-0.060824</ixy>
+          <ixz>3.0419e-18</ixz>
+          <iyy>0.17443</iyy>
+          <iyz>3.0406e-18</iyz>
+          <izz>0.19513</izz>
+        </inertia>
+      </inertial>
+      <collision name='hurdle2_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src_map/meshes/hurdle2_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hurdle2_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src_map/meshes/hurdle2_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hurdle3' type='revolute'>
+      <pose relative_to='base_link'>2.3776 -0.39466 0.09 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>hurdle3_Link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hurdle3_Link'>
+      <pose relative_to='hurdle3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.004393 0.008984 -0 0 -0 0</pose>
+        <mass>1.856</mass>
+        <inertia>
+          <ixx>0.038836</ixx>
+          <ixy>0.07675</ixy>
+          <ixz>-4.7401e-17</ixz>
+          <iyy>0.15827</iyy>
+          <iyz>2.0623e-17</iyz>
+          <izz>0.19513</izz>
+        </inertia>
+      </inertial>
+      <collision name='hurdle3_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src_map/meshes/hurdle3_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hurdle3_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src_map/meshes/hurdle3_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='hurdle4' type='revolute'>
+      <pose relative_to='base_link'>1.9201 -0.85934 0.09 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>hurdle4_Link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='hurdle4_Link'>
+      <pose relative_to='hurdle4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.008696 0.004938 0 0 -0 0</pose>
+        <mass>1.856</mass>
+        <inertia>
+          <ixx>0.148365</ixx>
+          <ixy>0.083518</ixy>
+          <ixz>-1.38832e-17</ixz>
+          <iyy>0.04874</iyy>
+          <iyz>2.57793e-17</iyz>
+          <izz>0.195125</izz>
+        </inertia>
+      </inertial>
+      <collision name='hurdle4_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src_map/meshes/hurdle4_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='hurdle4_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src_map/meshes/hurdle4_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='line' type='revolute'>
+      <pose relative_to='base_link'>-0.53783 0.039373 0.05 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>line_Link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='line_Link'>
+      <pose relative_to='line'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0 0 -0.025 0 -0 0</pose>
+        <mass>17.7562</mass>
+        <inertia>
+          <ixx>10.3552</ixx>
+          <ixy>0.247521</ixy>
+          <ixz>4.44434e-16</ixz>
+          <iyy>40.9733</iyy>
+          <iyz>1.01307e-17</iyz>
+          <izz>51.3211</izz>
+        </inertia>
+      </inertial>
+      <collision name='line_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src_map/meshes/line_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='line_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src_map/meshes/line_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

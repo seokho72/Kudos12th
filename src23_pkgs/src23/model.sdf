@@ -1,0 +1,851 @@
+<sdf version='1.7'>
+  <model name='src23'>
+  
+    <!-- <joint name='base' type='fixed'>
+      <parent>world</parent>
+      <child>base_link</child>
+    </joint> -->
+    
+    <link name='base_link'>
+      <inertial>
+        <pose>-0 0 -0 0 -0 0</pose>
+        <mass>2.000</mass> <!-- 6.902 -->
+        <inertia>
+          <ixx>0.0088742</ixx>  <!-- 0.044371 / 0.0221855 / 0.0147903 / 0.01109275 / 0.0088742 -->
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0074864</iyy>  <!-- 0.037432 / 0.018716 / 0.0124773 / 0.009358 / 0.0074864 -->
+          <iyz>0</iyz>
+          <izz>0.007484</izz>   <!-- 0.03702 / 0.01851 / 0.01234 / 0.009255 / 0.007484 -->
+        </inertia>
+      </inertial>
+      <!-- <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      
+      <sensor name='IMU' type="imu">
+    	<pose relative_to='base_link'>-0 -0 0 0 -0 0</pose>
+    	<imu>
+    	<angular_velocity>
+    		<x> <noise type='none'> </noise> </x>
+    		<y> <noise type='none'> </noise> </y>    
+    		<z> <noise type='none'> </noise> </z>
+    	</angular_velocity>
+    	
+    	<linear_acceleration>
+    		<x> <noise type='none'> </noise> </x>
+    		<y> <noise type='none'> </noise> </y>    
+    		<z> <noise type='none'> </noise> </z>
+    	</linear_acceleration>
+    	</imu>
+    	<always_on>1</always_on>
+    	<update_rate>1000</update_rate>
+    	<visualize>true</visualize>
+    	</sensor>
+      
+      <sensor type="camera" name="camera1">
+      <pose relative_to='base_link'>-0 -0 0.2 0 0.3925 0</pose>
+          <update_rate>30.0</update_rate>
+
+          <camera name="head">
+            <horizontal_fov>1.3962634</horizontal_fov>
+            <image>
+              <width>1920</width>
+              <height>1080</height>
+              <format>R8G8B8</format>
+            </image>
+            <clip>
+              <near>0.02</near>
+              <far>300</far>
+            </clip>
+            <noise>
+              <type>gaussian</type>
+              
+              <mean>0.0</mean>
+              <stddev>0.007</stddev>
+            </noise>
+          </camera> 
+
+          <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>0.0</updateRate>
+            <cameraName>kubot_cam</cameraName>
+            <imageTopicName>image_raw</imageTopicName>
+            <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+            <frameName>camera_link</frameName>
+            <hackBaseline>0.07</hackBaseline>
+            <distortionK1>0.0</distortionK1>
+            <distortionK2>0.0</distortionK2>
+            <distortionK3>0.0</distortionK3>
+            <distortionT1>0.0</distortionT1>
+            <distortionT2>0.0</distortionT2>
+          </plugin>
+        </sensor> 
+      
+    </link>
+    <joint name='LP' type='revolute'>
+      <pose relative_to='base_link'>0.007455 0.05 -0.18676 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>LP_Link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- <lower>-3.14</lower>
+          <upper>3.14</upper> -->
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LP_Link'>
+      <pose relative_to='LP'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.003084 0 0.027759 0 -0 0</pose>
+        <mass>0.0321847</mass>
+        <inertia>
+          <ixx>8.15087e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.74665e-06</iyy>
+          <iyz>0</iyz>
+          <izz>9.2429e-06</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='LP_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LP_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='LP_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LP_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LPm' type='revolute'>
+      <pose relative_to='LP_Link'>0 0 0 0 -0 0</pose>
+      <parent>LP_Link</parent>
+      <child>LPm_Link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <!-- <lower>-3.14</lower>
+          <upper>3.14</upper> -->
+
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LPm_Link'>
+      <pose relative_to='LPm'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.020727 2.7e-05 -0.014808 0 -0 0</pose>
+        <mass>0.186247</mass>
+        <inertia>
+          <ixx>7.32062e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.58557e-05</iyy>
+          <iyz>0</iyz>
+          <izz>4.46475e-05</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='LPm_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LPm_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='LPm_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LPm_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LPd' type='revolute'>
+      <pose relative_to='LPm_Link'>0 0 0 0 -0 0</pose>
+      <parent>LPm_Link</parent>
+      <child>LPd_Link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- <lower>-3.14</lower>
+          <upper>3.14</upper> -->
+
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LPd_Link'>
+      <pose relative_to='LPd'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.004429 -3.1e-05 -0.087344 0 -0 0</pose>
+        <mass>0.155158</mass>
+        <inertia>
+          <ixx>8.67547e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.92367e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.77122e-05</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='LPd_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LPd_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='LPd_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LPd_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LK' type='revolute'>
+      <pose relative_to='LPd_Link'>0 0 -0.12 0 -0 0</pose>
+      <parent>LPd_Link</parent>
+      <child>LK_Link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- <lower>-3.14</lower>
+          <upper>3.14</upper> -->
+
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LK_Link'>
+      <pose relative_to='LK'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.011128 0 -0.046701 0 -0 0</pose>
+        <mass>0.0766833</mass>
+        <inertia>
+          <ixx>8.13835e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.60267e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.26229e-05</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='LK_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LK_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='LK_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LK_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LA' type='revolute'>
+      <pose relative_to='LK_Link'>0 0 -0.12 0 -0 0</pose>
+      <parent>LK_Link</parent>
+      <child>LA_Link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- <lower>-3.14</lower>
+          <upper>3.14</upper> -->
+
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LA_Link'>
+      <pose relative_to='LA'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.020723 -3.5e-05 0.014808 0 -0 0</pose>
+        <mass>0.186247</mass>
+        <inertia>
+          <ixx>7.32062e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.58557e-05</iyy>
+          <iyz>0</iyz>
+          <izz>4.46475e-05</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='LA_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LA_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='LA_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LA_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LF' type='revolute'>
+      <pose relative_to='LA_Link'>0 0 0 0 -0 0</pose>
+      <parent>LA_Link</parent>
+      <child>LF_Link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <!-- <lower>-3.14</lower>
+          <upper>3.14</upper> -->
+
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='LF_Link'>
+      <pose relative_to='LF'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.026596 -0.0001 -0.019713 0 -0 0</pose>
+        <mass>0.00840381</mass>
+        <inertia>
+          <ixx>2.59254e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.39862e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.22894e-06</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='LF_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LF_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='LF_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LF_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='LS' type='fixed'>
+      <pose relative_to='LF_Link'>0 0 -0.05 0 -0 0</pose>
+      <parent>LF_Link</parent>
+      <child>LS_Link</child>
+    </joint>
+    <link name='LS_Link'>
+      <pose relative_to='LS'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.004719 0.00669 0.007071 0 -0 0</pose>
+        <mass>0.145083</mass>
+        <inertia>
+          <ixx>0.000115542</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000210297</iyy>
+          <iyz>0</iyz>
+          <izz>0.000318707</izz>
+        </inertia>
+      </inertial>
+      <collision name='LS_Link_collision'>
+        <pose>0.002 0.01 0.005 0 -0 0</pose>
+        <geometry>
+        <box>
+	<size>0.14 0.10 0.01</size>
+	</box>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LS_Link.STL</uri>
+          </mesh>
+        </geometry>
+        
+        <surface>
+        
+        <friction>
+      	    <ode>
+        	<mu>0.2</mu>         
+               <mu2>0.1</mu2>   
+      	    </ode>
+    	</friction>
+    	
+        <contact>
+            <ode>
+              <kp>10000000</kp>
+              <kd>10000</kd>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        
+        
+      </collision>
+      
+      
+      <visual name='LS_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/LS_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RP' type='revolute'>
+      <pose relative_to='base_link'>0.007455 -0.05 -0.18676 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>RP_Link</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <!-- <lower>-3.14</lower>
+          <upper>3.14</upper> -->
+
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RP_Link'>
+      <pose relative_to='RP'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.003084 0 0.027759 0 -0 0</pose>
+        <mass>0.032185</mass>
+        <inertia>
+          <ixx>8.1509e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.7466e-06</iyy>
+          <iyz>0</iyz>
+          <izz>9.2429e-06</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='RP_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RP_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='RP_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RP_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RPm' type='revolute'>
+      <pose relative_to='RP_Link'>0 0 0 0 -0 0</pose>
+      <parent>RP_Link</parent>
+      <child>RPm_Link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <!-- <lower>-3.14</lower>
+          <upper>3.14</upper> -->
+
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RPm_Link'>
+      <pose relative_to='RPm'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.020727 2.7e-05 -0.014808 0 -0 0</pose>
+        <mass>0.18625</mass>
+        <inertia>
+          <ixx>7.3206e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.5856e-05</iyy>
+          <iyz>0</iyz>
+          <izz>4.4648e-05</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='RPm_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RPm_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='RPm_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RPm_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RPd' type='revolute'>
+      <pose relative_to='RPm_Link'>0 0 0 0 -0 0</pose>
+      <parent>RPm_Link</parent>
+      <child>RPd_Link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- <lower>-3.14</lower>
+          <upper>3.14</upper> -->
+
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RPd_Link'>
+      <pose relative_to='RPd'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.004429 -3.1e-05 -0.087344 0 -0 0</pose>
+        <mass>0.15516</mass>
+        <inertia>
+          <ixx>8.6755e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>7.9237e-05</iyy>
+          <iyz>0</iyz>
+          <izz>3.7712e-05</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='RPd_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RPd_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='RPd_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RPd_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RK' type='revolute'>
+      <pose relative_to='RPd_Link'>0 0 -0.12 0 -0 0</pose>
+      <parent>RPd_Link</parent>
+      <child>RK_Link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- <lower>-3.14</lower>
+          <upper>3.14</upper> -->
+
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RK_Link'>
+      <pose relative_to='RK'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.011128 0 -0.046701 0 -0 0</pose>
+        <mass>0.076683</mass>
+        <inertia>
+          <ixx>8.1384e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>8.6027e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.2623e-05</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='RK_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RK_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='RK_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RK_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RA' type='revolute'>
+      <pose relative_to='RK_Link'>0 0 -0.12 0 -0 0</pose>
+      <parent>RK_Link</parent>
+      <child>RA_Link</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <!-- <lower>-3.14</lower>
+          <upper>3.14</upper> -->
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RA_Link'>
+      <pose relative_to='RA'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.020723 -3.5e-05 0.014808 0 -0 0</pose>
+        <mass>0.18625</mass>
+        <inertia>
+          <ixx>7.3206e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.5856e-05</iyy>
+          <iyz>0</iyz>
+          <izz>4.4648e-05</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='RA_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RA_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='RA_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RA_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RF' type='revolute'>
+      <pose relative_to='RA_Link'>0 0 0 0 -0 0</pose>
+      <parent>RA_Link</parent>
+      <child>RF_Link</child>
+      <axis>
+        <xyz>1 0 0</xyz>
+        <limit>
+          <!-- <lower>-3.14</lower>
+          <upper>3.14</upper> -->
+
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='RF_Link'>
+      <pose relative_to='RF'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-0.026596 -0.0001 -0.019713 0 -0 0</pose>
+        <mass>0.0084038</mass>
+        <inertia>
+          <ixx>2.5925e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.3986e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.2289e-06</izz>
+        </inertia>
+      </inertial>
+      <!-- <collision name='RF_Link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RF_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision> -->
+      <visual name='RF_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RF_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='RS' type='fixed'>
+      <pose relative_to='RF_Link'>0 0 -0.05 0 -0 0</pose>
+      <parent>RF_Link</parent>
+      <child>RS_Link</child>
+    </joint>
+    <link name='RS_Link'>
+      <pose relative_to='RS'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.004719 -0.006889 0.007071 0 -0 0</pose>
+        <mass>0.14508</mass>
+        <inertia>
+          <ixx>0.00011554</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.0002103</iyy>
+          <iyz>0</iyz>
+          <izz>0.00031871</izz>
+        </inertia>
+      </inertial>
+      <collision name='RS_Link_collision'>
+        <pose>0.002 -0.01 0.005 0 -0 0</pose>
+        <geometry>
+        <box>
+	<size>0.14 0.10 0.01</size>
+	</box>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RS_Link.STL</uri>
+          </mesh>
+        </geometry>
+        
+        <surface>
+        
+        <friction>
+      	<ode>
+        <mu>0.2</mu>         
+        <mu2>0.1</mu2>
+      	</ode>
+    	</friction>
+    	
+    	
+        <contact>
+            <ode>
+              <kp>10000000</kp>
+              <kd>10000</kd>
+              <max_vel>0.1</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+        </surface>
+        
+      </collision>
+      
+      <visual name='RS_Link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://src23/meshes/RS_Link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
